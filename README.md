@@ -241,7 +241,7 @@ We also add the PostCSS compilation step to our build step. In `package.json`...
 "scripts": {
   "dev": "run-p watch:css watch:sapper",
   "watch:css": "postcss src/global.pcss -o static/global.css -w",
-  "watch:sapper": "sapper dev --no-hot --ext '.svelte'",
+  "watch:sapper": "PORT=3000 sapper dev --dev-port=10000 --no-hot --ext '.svelte'",
   "build": "run-s build:css build:sapper",
   "build:css": "NODE_ENV=production postcss src/global.pcss -o static/global.css",
   "build:sapper": "NODE_ENV=production sapper build --ext '.svelte'",
